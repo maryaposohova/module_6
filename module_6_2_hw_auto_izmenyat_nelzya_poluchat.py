@@ -32,7 +32,7 @@
 
 
 class Vehicle:  # транспорт
-    _COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
+    _COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white', 'cherry red']
 
     def __init__(self, owner, __model, __color, __engine_power):
         self.owner = owner    # владелец транспорта может меняться
@@ -67,17 +67,28 @@ class Sedan(Vehicle):  # седан
 
 # Текущие цвета __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
 vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
-
 # Изначальные свойства
 vehicle1.print_info()
-
 # Меняем свойства (в т.ч. вызывая методы)
 vehicle1.set_color('Pink')
 vehicle1.set_color('BLACK')
 vehicle1.owner = 'Vasyok'
-print("Ниже измененные параметры:")
+print("!")
 # Проверяем что поменялось
 vehicle1.print_info()
+
+print()
+
+vehicle2 = Sedan('Елена', 'Фольксваген Джетта 5', 'red', 102)
+# Изначальные свойства
+vehicle2.print_info()
+# Меняем свойства (в т.ч. вызывая методы)
+vehicle2.set_color('Pink')
+vehicle2.set_color('CHERRY RED')
+vehicle2.owner = 'Мария'
+print("!")
+# Проверяем что поменялось
+vehicle2.print_info()
 
 """
 Практическое задание
