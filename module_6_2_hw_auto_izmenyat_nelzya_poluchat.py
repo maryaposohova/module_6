@@ -73,7 +73,6 @@ vehicle1.print_info()
 vehicle1.set_color('Pink')
 vehicle1.set_color('BLACK')
 vehicle1.owner = 'Vasyok'
-print("!")
 # Проверяем что поменялось
 vehicle1.print_info()
 
@@ -86,7 +85,6 @@ vehicle2.print_info()
 vehicle2.set_color('Pink')
 vehicle2.set_color('CHERRY RED')
 vehicle2.owner = 'Мария'
-print("!")
 # Проверяем что поменялось
 vehicle2.print_info()
 
