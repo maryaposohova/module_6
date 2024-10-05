@@ -154,6 +154,9 @@
 # e = Eagle()
 # print("Проверка. Птичка", e.y_distance, e.sound, e.run(10))
 
+
+# 1 вариант
+
 # class  Horse:
 #     x_distance = 0
 #     sound = 'Frrr'
@@ -192,31 +195,84 @@
 #
 # p1.voice()
 
+# # 2 вариант
+#
+# #  Задача "Мифическое наследование"
+# class Horse:
+#     def __init__(self, x_distance=0, sound='Frrr'):
+#         self.x_distance = x_distance
+#         self.sound = sound
+#
+#     def run(self, dx):
+#         self.x_distance += abs(dx)
+#         return self.x_distance
+#
+#
+# class Eagle:
+#     def __init__(self, y_distance=0, sound='I train, eat, sleep, and repeat'):
+#         self.y_distance = y_distance
+#         self.sound = sound
+#
+#     def fly(self, dy):
+#         self.y_distance += abs(dy)
+#         return self.y_distance
+#
+#
+# class Pegasus(Horse, Eagle):
+#     def __init__(self):
+#         super().__init__()
+#         Eagle.__init__(self)
+#
+#     def move(self, dx, dy):
+#         self.run(dx)
+#         self.fly(dy)
+#
+#     def get_pos(self):
+#         return (self.x_distance, self.y_distance)
+#
+#     def voice(self):
+#         print(Eagle().sound)  # или self.sound дает саунд от класса Eagle, а не от Horse почему-то
+#
+#
+# p1 = Pegasus()
+#
+# print(p1.get_pos())
+# p1.move(10, 15)
+# print(p1.get_pos())
+#
+# p1.move(-5, 20)
+# print(p1.get_pos())
+#
+# p1.voice()
+#
+# # print(Pegasus.mro())
 
-#  Задача "Мифическое наследование"
+
+# 3 вариант
+
 class Horse:
-    def __init__(self, x_distance=0, sound='Frrr'):
-        self.x_distance = x_distance
-        self.sound = sound
+    def __init__(self):
+        self.x_distance = 0
+        self.sound = 'Frrr'
 
     def run(self, dx):
-        self.x_distance += abs(dx)
-        return self.x_distance
+        self.x_distance += dx
+        # return self.x_distance
 
 
 class Eagle:
-    def __init__(self, y_distance=0, sound='I train, eat, sleep, and repeat'):
-        self.y_distance = y_distance
-        self.sound = sound
+    def __init__(self):
+        self.y_distance = 0
+        self.sound = 'I train, eat, sleep, and repeat'
 
     def fly(self, dy):
-        self.y_distance += abs(dy)
-        return self.y_distance
+        self.y_distance += dy
+        # return self.y_distance
 
 
 class Pegasus(Horse, Eagle):
     def __init__(self):
-        super().__init__()
+        Horse.__init__(self)
         Eagle.__init__(self)
 
     def move(self, dx, dy):
@@ -227,7 +283,13 @@ class Pegasus(Horse, Eagle):
         return (self.x_distance, self.y_distance)
 
     def voice(self):
-        print(Eagle().sound)  # или self.sound дает саунд от класса Eagle, а не от Horse почему-то
+        print(self.sound)
+
+
+#
+# h = Horse()
+# e = Eagle()
+# print(h.run(10), e.fly(11))
 
 
 p1 = Pegasus()
@@ -235,13 +297,11 @@ p1 = Pegasus()
 print(p1.get_pos())
 p1.move(10, 15)
 print(p1.get_pos())
-
 p1.move(-5, 20)
 print(p1.get_pos())
 
 p1.voice()
 
-# print(Pegasus.mro())
 '''
 2023/11/09 00:00|Домашнее задание по теме "Множественное наследование"
 Если вы решали старую версию задачи, проверка будет производиться по ней.
@@ -305,5 +365,6 @@ I train, eat, sleep, and repeat
 Файл module_6_3.py и загрузите его на ваш GitHub репозиторий. В решении пришлите ссылку на него.
 Успехов!
 
-https://urban-university.ru/members/courses/course999421818026/20231109-0000domasnee-zadanie-po-teme-mnozestvennoe-nasledovanie-290139472637
+https://urban-university.ru/members/courses/course999421818026/20231109-0000domasnee-zadanie-po-teme-mnozestvennoe-
+nasledovanie-290139472637
 '''
