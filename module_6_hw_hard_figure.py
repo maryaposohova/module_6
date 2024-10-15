@@ -381,7 +381,6 @@ class Figure:
     def __is_valid_sides(self, *__sides: int):
         return all(isinstance(side, int) and side > 0 for side in __sides)
 
-
     def set_sides(self, *new_sides):
         if self.__is_valid_sides(*new_sides):
             # Проверка на количество сторон
@@ -428,7 +427,7 @@ class Cube(Figure):
 class Triangle(Figure):
     sides_count = 3
 
-    def __init__(self, color=(250, 170, 2), sides = (1, 1, 1), filled: bool = False):
+    def __init__(self, color=(250, 170, 2), sides=(1, 1, 1), filled: bool = False):
         super().__init__(self.sides_count, color, filled)
         self.set_color(*color)
         self.sides = sides
@@ -454,23 +453,20 @@ class Triangle(Figure):
             print("У треугольника одна из сторон должна быть > суммы двух других, либо все стороны равны")
 
 
-
 print('Круг и куб')
-circle1 = Circle([200, 200, 100], 10)  # (Цвет, стороны)
-cube1 = Cube([222, 35, 130], 6)
-
+circle1 = Circle([200, 200, 100], 10)  # цвет пыльно-желтый
+cube1 = Cube([222, 35, 130], 6)  # цвет фуксия
 
 # Проверка на изменение цветов:
-circle1.set_color(55, 66, 77)   # Изменится
+circle1.set_color(55, 66, 77)  # Изменится
 print(circle1.get_color())
-cube1.set_color(300, 70, 15)   # Не изменится
+cube1.set_color(300, 70, 15)  # Не изменится
 print(cube1.get_color())
 
-
 # Проверка на изменение сторон:
-cube1.set_sides(5, 3, 12, 4, 5)   # Не изменится
+cube1.set_sides(5, 3, 12, 4, 5)  # Не изменится
 print(cube1.get_sides())
-circle1.set_sides(15)   # Изменится
+circle1.set_sides(15)  # Изменится
 print(circle1.get_sides())
 
 # Проверка периметра (круга), это и есть длина:
@@ -480,14 +476,14 @@ print(len(circle1))
 print(cube1.get_volume())
 
 print("Треугольник")
-triangle1 = Triangle([250, 170, 2], [6, 6, 14],  False)
+triangle1 = Triangle([250, 170, 2], [6, 6, 14], True)  # цвет яичного желтка
 
 # Проверка на изменение цветов:
-triangle1.set_color(300, 70, 15)   # Не изменится
+triangle1.set_color(300, 70, 15)  # Не изменится
 print(triangle1.get_color())
 
 # Проверка на изменение сторон:
-triangle1.set_sides(7, 7, 7)   # стороны равны
+triangle1.set_sides(7, 7, 7)  # стороны равны
 print(triangle1.get_sides())
 # triangle1.set_sides(15, 4, 7)   # одна сторона > суммы двух других сторон
 # print(triangle1.get_sides())
