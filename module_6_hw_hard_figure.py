@@ -421,7 +421,8 @@ class Cube(Figure):
         self.set_sides(sides, sides, sides, sides, sides, sides, sides, sides, sides, sides, sides, sides)
 
     def get_volume(self):
-        return self.sides ** 3
+        return self.sides ** 3 # площадь куба это длина стороны в кубе (в третьей степени)
+
 
 
 class Triangle(Figure):
@@ -450,7 +451,7 @@ class Triangle(Figure):
         if a + b > c and a + c > b and b + c > a:
             return round((sqrt(p * (p - a) * (p - b) * (p - c))), 2)
         else:
-            print("У треугольника одна из сторон должна быть > суммы двух других, либо все стороны равны")
+            print("У треугольника одна из сторон должна быть < суммы двух других, либо все стороны равны")
 
 
 print('Круг и куб')
@@ -483,7 +484,9 @@ triangle1.set_color(300, 70, 15)  # Не изменится
 print(triangle1.get_color())
 
 # Проверка на изменение сторон:
-triangle1.set_sides(7, 7, 7)  # стороны равны
+# triangle1.set_sides(7, 7, 7)  # стороны равны
+# print(triangle1.get_sides())
+triangle1.set_sides(5, 4, 7)   # треугольник невозможен одна сторона < суммы двух других сторон
 print(triangle1.get_sides())
 # triangle1.set_sides(15, 4, 7)   # одна сторона > суммы двух других сторон
 # print(triangle1.get_sides())
