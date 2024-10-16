@@ -486,9 +486,9 @@ print(triangle1.get_color())
 # Проверка на изменение сторон:
 # triangle1.set_sides(7, 7, 7)  # стороны равны
 # print(triangle1.get_sides())
-triangle1.set_sides(5, 4, 7)   # треугольник невозможен одна сторона < суммы двух других сторон
+triangle1.set_sides(5, 4, 7)   # н одна сторона < суммы двух других сторон
 print(triangle1.get_sides())
-# triangle1.set_sides(15, 4, 7)   # одна сторона > суммы двух других сторон
+# triangle1.set_sides(15, 4, 7)   # треугольник невозможен, тк одна сторона > суммы двух других сторон
 # print(triangle1.get_sides())
 # triangle1.set_sides(2, 2, 5)   # треугольник невозможен
 # print(triangle1.get_sides())
